@@ -20,6 +20,14 @@ app.use("/api/works", worksRoutes);
 app.use("/api/skills", skillsRoutes);
 app.use("/api/contact", contactRoutes);
 
+// エラーハンドリング
+app.use((err: any, req: any, res: any, next: any) => {
+  console.error(err);
+  res.status(500).json({
+    message: "Internal Server Error",
+  });
+});
+
 const PORT = 3001;
 
 app.listen(PORT, () => {
