@@ -1,13 +1,17 @@
 import express from "express";
+import cors from "cors";
 
 import profileRoutes from "./routes/profileRoutes";
 import worksRoutes from "./routes/worksRoutes";
 import skillsRoutes from "./routes/skillsRoutes";
 import contactRoutes from "./routes/contactRoutes";
+import adminWorksRoutes from "./routes/adminWorksRoutes";
 
 const app = express();
 
-app.use(express.json());
+app.use(cors()); // フロントからのアクセスを許可
+app.use(express.json()); // JSONを解析できるようにする
+app.use("/api/admin/works", adminWorksRoutes);
 
 // ルート確認用
 app.get("/", (req, res) => {
