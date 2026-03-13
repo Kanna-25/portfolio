@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 
+// 各エンドポイントごとのルーティングをインポート
 import profileRoutes from "./routes/profileRoutes";
 import worksRoutes from "./routes/worksRoutes";
 import skillsRoutes from "./routes/skillsRoutes";
@@ -13,12 +14,12 @@ app.use(cors()); // フロントからのアクセスを許可
 app.use(express.json()); // JSONを解析できるようにする
 app.use("/api/admin/works", adminWorksRoutes);
 
-// ルート確認用
+// adminAPI
 app.get("/", (req, res) => {
   res.send("API server running");
 });
 
-// routes接続
+// 一般公開用 API
 app.use("/api/profile", profileRoutes);
 app.use("/api/works", worksRoutes);
 app.use("/api/skills", skillsRoutes);

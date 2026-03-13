@@ -4,15 +4,18 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// Prisma クライアントの生成設定
 generator client {
   provider = "prisma-client-js"
 }
 
+// データベースへの接続設定
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
+// プロフィール情報
 model Profile {
   id        Int      @id @default(autoincrement())
   name      String
@@ -21,6 +24,7 @@ model Profile {
   createdAt DateTime @default(now())
 }
 
+// 実績情報
 model Work {
   id          Int      @id @default(autoincrement())
   title       String
@@ -31,12 +35,14 @@ model Work {
   createdAt   DateTime @default(now())
 }
 
+// スキル情報
 model Skill {
   id    Int    @id @default(autoincrement())
   name  String
   level Int
 }
 
+// お問い合わせ情報
 model Contact {
   id        Int      @id @default(autoincrement())
   name      String
