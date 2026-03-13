@@ -1,12 +1,10 @@
-version: "3.9"
-
 services:
   db:
     image: mysql:8.0
     container_name: portfolio-db
     restart: always
     env_file:
-      - .env
+      - backend/.env
     ports:
       - "3306:3306"
     volumes:
