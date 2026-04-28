@@ -13,7 +13,7 @@ export default function EditPage() {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [githubUrl, setUrl] = useState("");
+  const [githubUrl, setGithubUrl] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:3001/api/works`)
@@ -23,7 +23,7 @@ export default function EditPage() {
         if (target) {
           setTitle(target.title);
           setDescription(target.description);
-          setUrl(target.githubUrl);
+          setGithubUrl(target.githubUrl);
         }
       });
   }, [id]);
@@ -76,7 +76,7 @@ export default function EditPage() {
             </label>
             <input
               value={githubUrl}
-              onChange={(e) => setUrl(e.target.value)}
+              onChange={(e) => setGithubUrl(e.target.value)}
               placeholder="https://example.com"
               className="w-full px-2 py-3 border-b border-slate-200 bg-transparent text-slate-800 focus:outline-none focus:border-[#f0d9c1] transition-colors"
             />
