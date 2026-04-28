@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("/", createWork);
 
 // 更新
-router.put("/:id", updateWork);
+router.patch("/:id", updateWork);
 
 // 削除
 router.delete("/:id", deleteWork);

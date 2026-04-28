@@ -13,7 +13,7 @@ const app = express();
 app.use(cors()); // フロントからのアクセスを許可
 app.use(express.json()); // JSONを解析できるようにする
 app.use("/api/admin/works", adminWorksRoutes);
-
+app.use("/api", contactRoutes);
 // adminAPI
 app.get("/", (req, res) => {
   res.send("API server running");
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.use("/api/profile", profileRoutes);
 app.use("/api/works", worksRoutes);
 app.use("/api/skills", skillsRoutes);
-app.use("/api/contact", contactRoutes);
+app.use("/api/contacts", contactRoutes);
 
 // エラーハンドリング
 app.use((err: any, req: any, res: any, next: any) => {

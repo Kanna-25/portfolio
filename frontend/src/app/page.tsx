@@ -3,6 +3,7 @@
 import { getProfile, getWorks, getSkills } from "../../lib/api";
 import Link from "next/link";
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
 export default async function Home() {
   const profile = await getProfile();
@@ -60,7 +61,7 @@ export default async function Home() {
 
       {/* コンテンツ */}
       <div className="flex flex-col gap-24 md:gap-32 max-w-5xl mx-auto px-6">
-        {/* 1: about me */}
+        {/* about me */}
         <section id="profile" className="scroll-mt-12">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 mb-80">
             <div className="w-full md:w-1/2 text-center">
@@ -98,7 +99,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* 2: works - 左右反転 */}
+        {/* works - 左右反転 */}
         <section id="works" className="scroll-mt-12">
           <div className="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-20 mb-80">
             <div className="w-full md:w-1/2 text-center">
@@ -143,35 +144,26 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* 3: contact */}
+        {/* contact */}
         <section id="contact" className="scroll-mt-12">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 mb-80">
-            <div className="w-full md:w-1/2 text-center">
-              <h3 className="text-4xl font-semibold tracking-wider mb-8 relative after:content-[''] after:block after:w-32 after:h-px after:bg-slate-800 after:mx-auto after:mt-3">
-                contact
-              </h3>
-              <p className="text-slate-600">
-                お問い合わせはメールまたはSNSでお願いします。
-              </p>
-            </div>
-            {/* contactの画像 */}
-            <div
-              className={`relative w-full md:w-1/2 aspect-square md:h-[360px] ${shadowLeft}`}
-            >
-              <Image
-                src="/images/my-icon-pc.jpg"
-                alt="contact"
-                fill
-                className="z-10 object-cover rounded-sm"
-              />
+          <div className="flex flex-col items-center text-center mb-20 max-w-5xl mx-auto px-6">
+            <h3 className="text-4xl font-semibold tracking-wider mb-8 relative after:content-[''] after:block after:w-32 after:h-px after:bg-slate-800 after:mx-auto after:mt-3">
+              contact
+            </h3>
+            <p className="text-slate-600">
+              お問い合わせはこちらからお願いします。
+            </p>
+
+            <div className="w-full">
+              <ContactForm />
             </div>
           </div>
         </section>
-      </div>
 
-      <footer className="text-center mt-20 pb-12 text-slate-600 italic">
-        - Thank you -
-      </footer>
+        <footer className="text-center pb-12 text-slate-600 italic">
+          - Thank you -
+        </footer>
+      </div>
     </div>
   );
 }
