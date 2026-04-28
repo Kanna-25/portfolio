@@ -146,7 +146,7 @@ export default async function Home() {
 
         {/* contact */}
         <section id="contact" className="scroll-mt-12">
-          <div className="flex flex-col items-center text-center mb-80 max-w-5xl mx-auto px-6">
+          <div className="flex flex-col items-center text-center mb-20 max-w-5xl mx-auto px-6">
             <h3 className="text-4xl font-semibold tracking-wider mb-8 relative after:content-[''] after:block after:w-32 after:h-px after:bg-slate-800 after:mx-auto after:mt-3">
               contact
             </h3>
@@ -160,7 +160,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <footer className="text-center mt-20 pb-12 text-slate-600 italic">
+        <footer className="text-center pb-12 text-slate-600 italic">
           - Thank you -
         </footer>
       </div>

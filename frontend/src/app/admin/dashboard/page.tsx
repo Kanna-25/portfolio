@@ -34,7 +34,7 @@ export default function Dashboard() {
     <main className="min-h-screen bg-gradient-to-b from-[#f9fafb] via-[#fffaf5] to-[#f0d9c1] p-8">
       {/* ヘッダー部分 */}
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl">管理画面</h1>
+        <h1 className="text-2xl">works管理画面</h1>
 
         <Link
           href="/admin/works/new"
