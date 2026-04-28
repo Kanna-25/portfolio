@@ -117,9 +117,14 @@ export default async function Home() {
                     <p className="text-sm text-slate-600 mt-1">
                       {work.description}
                     </p>
-                    <p className="text-sm text-slate-600 mt-1">
+                    <a
+                      href={work.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline"
+                    >
                       {work.githubUrl}
-                    </p>
+                    </a>
                   </div>
                 ))}
               </div>
