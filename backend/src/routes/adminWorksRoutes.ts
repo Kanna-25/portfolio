@@ -1,16 +1,17 @@
 import express from "express";
-
-// 管理画面用の制作実績コントローラーをインポート
 import { createWork } from "../controllers/adminWorksController";
+
+import { updateWork, deleteWork } from "../controllers/worksController";
 
 const router = express.Router();
 
-// POST / - 新規制作実績の登録
+// 新規作成
 router.post("/", createWork);
 
-/* * 将来追加予定のルートのメモ:
- * router.get("/", getWorks);        // 一覧取得
- * router.put("/:id", updateWork);   // 更新
- * router.delete("/:id", deleteWork); // 削除
- */
+// 更新
+router.put("/:id", updateWork);
+
+// 削除
+router.delete("/:id", deleteWork);
+
 export default router;

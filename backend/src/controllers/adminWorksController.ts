@@ -6,14 +6,14 @@ const prisma = new PrismaClient();
 
 export const createWork = async (req: Request, res: Response) => {
   // 1. リクエストボディから必要なデータを取り出す
-  const { title, description, url } = req.body;
+  const { title, description, githubUrl } = req.body;
 
   // 2. データベースに保存
   const work = await prisma.work.create({
     data: {
       title,
       description,
-      githubUrl: url,
+      githubUrl,
     },
   });
 
