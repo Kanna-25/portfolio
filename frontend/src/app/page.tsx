@@ -73,7 +73,7 @@ export default async function Home() {
                 </li>
                 <div className="grid grid-cols-2 gap-x-4">
                   <li className="list-disc ml-5 text-slate-600">Skills:</li>
-                  {skills.map((skill: any) => (
+                  {skills?.map((skill: any) => (
                     <li
                       key={skill.id}
                       className="list-disc ml-5 text-slate-600"
