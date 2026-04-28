@@ -27,23 +27,33 @@ export default function AdminHome() {
           Welcome Home
         </h1>
 
+        {/* works */}
         <div className="flex flex-col gap-6 items-center">
-          {/* 設定ボタン */}
           <Link
             href="/admin/dashboard"
             className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
           >
-            worksの管理画面へ進む →
+            worksの管理画面へ →
           </Link>
 
-          {/* ログアウト */}
-          <div className="mt-10 text-center">
-            <button
-              className="text-sm text-gray-400 hover:text-gray-600 transition"
-              onClick={handleLogout}
+          {/* contacts */}
+          <div className="flex flex-col gap-6 items-center">
+            <Link
+              href="/admin/contacts"
+              className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
             >
-              ログアウト
-            </button>
+              contactsの管理画面へ →
+            </Link>
+
+            {/* ログアウト */}
+            <div className="mt-10 text-center">
+              <button
+                className="text-sm text-gray-400 hover:text-gray-600 transition"
+                onClick={handleLogout}
+              >
+                ログアウト
+              </button>
+            </div>
           </div>
         </div>
       </div>
