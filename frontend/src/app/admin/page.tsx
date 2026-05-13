@@ -27,32 +27,52 @@ export default function AdminHome() {
           Welcome Home
         </h1>
 
-        {/* works */}
+        {/* profile */}
         <div className="flex flex-col gap-6 items-center">
           <Link
-            href="/admin/dashboard"
+            href="/admin/profile"
             className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
           >
-            worksの管理画面へ →
+            profileの管理画面へ →
           </Link>
 
-          {/* contacts */}
+          {/* skills */}
           <div className="flex flex-col gap-6 items-center">
             <Link
-              href="/admin/contacts"
+              href="/admin/skills"
               className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
             >
-              contactsの管理画面へ →
+              skillsの管理画面へ →
             </Link>
 
-            {/* ログアウト */}
-            <div className="mt-10 text-center">
-              <button
-                className="text-sm text-gray-400 hover:text-gray-600 transition"
-                onClick={handleLogout}
+            {/* works */}
+            <div className="flex flex-col gap-6 items-center">
+              <Link
+                href="/admin/dashboard"
+                className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
               >
-                ログアウト
-              </button>
+                worksの管理画面へ →
+              </Link>
+
+              {/* contacts */}
+              <div className="flex flex-col gap-6 items-center">
+                <Link
+                  href="/admin/contacts"
+                  className="w-full max-w-xs bg-[#f0d9c1] hover:bg-[#e6c4a3] text-slate-700 tracking-[0.2em] font-bold py-4 px-8 rounded-lg shadow-md shadow-[#f0d9c1]/30 transition duration-300 ease-in-out transform hover:scale-[1.05]"
+                >
+                  contactsの管理画面へ →
+                </Link>
+
+                {/* ログアウト */}
+                <div className="mt-10 text-center">
+                  <button
+                    className="text-sm text-gray-400 hover:text-gray-600 transition"
+                    onClick={handleLogout}
+                  >
+                    ログアウト
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

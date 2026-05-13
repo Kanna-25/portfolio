@@ -7,23 +7,26 @@ import worksRoutes from "./routes/worksRoutes";
 import skillsRoutes from "./routes/skillsRoutes";
 import contactRoutes from "./routes/contactRoutes";
 import adminWorksRoutes from "./routes/adminWorksRoutes";
+import adminProfileRoutes from "./routes/adminProfileRoutes";
 
 const app = express();
 
 app.use(cors()); // フロントからのアクセスを許可
 app.use(express.json()); // JSONを解析できるようにする
+// 管理用API
 app.use("/api/admin/works", adminWorksRoutes);
-app.use("/api", contactRoutes);
-// adminAPI
-app.get("/", (req, res) => {
-  res.send("API server running");
-});
+app.use("/api/admin/profile", adminProfileRoutes);
 
 // 一般公開用 API
 app.use("/api/profile", profileRoutes);
 app.use("/api/works", worksRoutes);
 app.use("/api/skills", skillsRoutes);
 app.use("/api/contacts", contactRoutes);
+
+//確認用
+app.get("/", (req, res) => {
+  res.send("API server running");
+});
 
 // エラーハンドリング
 app.use((err: any, req: any, res: any, next: any) => {

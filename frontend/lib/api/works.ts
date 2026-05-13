@@ -3,7 +3,9 @@ const API_BASE = "http://localhost:3001/api";
 
 // 実績情報を取得
 export const getWorks = async () => {
-  const res = await fetch(`${API_BASE}/works`);
+  const res = await fetch(`${API_BASE}/works`, {
+    cache: "no-store",
+  });
   return res.json();
 };
 

@@ -7,10 +7,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default async function Home() {
   const profile = await getProfile();
-  const works = await fetch("http://localhost:3001/api/works", {
-    // 最新情報を常に表示するために、キャッシュを無効化（no-store）
-    cache: "no-store",
-  }).then((res) => res.json());
+  const works = await getWorks();
   const skills = await getSkills();
 
   // 共通のボタンスタイル
@@ -39,7 +36,6 @@ export default async function Home() {
           Sign In
         </Link>
       </header>
-
       {/* ナビゲーションボタン */}
       <nav className="mt-8 flex gap-10 md:gap-24 justify-center items-center text-center px-4">
         <a href="#profile" className={btnClass}>
@@ -52,7 +48,6 @@ export default async function Home() {
           contact
         </a>
       </nav>
-
       {/* 背景画像 */}
       <section
         className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden bg-cover bg-center bg-no-repeat mt-8 mb-60 border-b border-black/10"
@@ -64,26 +59,38 @@ export default async function Home() {
         {/* about me */}
         <section id="profile" className="scroll-mt-12">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20 mb-80">
+            {/* テキストエリア */}
             <div className="w-full md:w-1/2 text-center">
               <h3 className="text-4xl font-semibold tracking-wider mb-8 relative after:content-[''] after:block after:w-32 after:h-px after:bg-slate-800 after:mx-auto after:mt-3">
                 about me
               </h3>
-              <ul className="inline-block text-left space-y-2">
-                <li className="list-disc ml-5 text-slate-600">
-                  生まれも育ちも大阪です！
-                </li>
-                <div className="grid grid-cols-2 gap-x-4">
-                  <li className="list-disc ml-5 text-slate-600">Skills:</li>
-                  {skills?.map((skill: any) => (
-                    <li
-                      key={skill.id}
-                      className="list-disc ml-5 text-slate-600"
-                    >
-                      {skill.name}
-                    </li>
-                  ))}
+
+              <div className="inline-block text-left max-w-md">
+                {/* bio */}
+                <div className="mb-8">
+                  <p className="text-slate-600 whitespace-pre-wrap leading-7">
+                    {profile?.bio || "自己紹介文がまだ設定されていません。"}
+                  </p>
                 </div>
-              </ul>
+
+                {/* skills */}
+                <div>
+                  <span className="text-xl font-bold text-slate-800 tracking-widest uppercase block mb-3">
+                    Skills
+                  </span>
+                  <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    {skills?.map((skill: any) => (
+                      <div key={skill.id} className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 bg-[#f0d9c1] rounded-full"></span>
+
+                        <span className="text-slate-600 text-[15px]">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
             {/* about meの画像 */}
             <div
