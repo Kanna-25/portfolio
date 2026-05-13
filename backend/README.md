@@ -83,10 +83,10 @@ DATABASE_URL="mysql://user:password@localhost:3306/db_name"
 | ------ | ---------------- | ---------------- |
 | GET    | /works           | 実績一覧取得     |
 | POST   | /admin/works     | 実績作成         |
-| PUT    | /admin/works/:id | 実績更新         |
+| PATCH  | /admin/works/:id | 実績更新         |
 | DELETE | /admin/works/:id | 実績削除         |
 | GET    | /profile         | プロフィール取得 |
-| PUT    | /admin/profile   | プロフィール更新 |
+| PATCH  | /admin/profile   | プロフィール更新 |
 | GET    | /skills          | スキル一覧取得   |
 | POST   | /skills          | スキル追加       |
 | DELETE | /skills/:id      | スキル削除       |

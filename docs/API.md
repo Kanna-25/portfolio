@@ -46,7 +46,73 @@
 
 ### 4. 削除
 
-- **DELETE** `admin/works/:id`
+- **DELETE** `/admin/works/:id`
+
+---
+
+## プロフィール（Profile）
+
+### 1. プロフィール取得
+
+- **GET** `/profile`
+
+**Response**
+
+```json
+{
+  "id": 1,
+  "name": "山田太郎",
+  "bio": "自己紹介文"
+}
+```
+
+### 2. プロフィール更新（管理者）
+
+- **PATCH** `/admin/profile`
+
+**Request**
+
+```json
+{
+  "name": "山田太郎",
+  "bio": "自己紹介文"
+}
+```
+
+---
+
+## スキル（Skills）
+
+### 1. スキル一覧取得
+
+- **GET** `/skills`
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Next.js"
+  }
+]
+```
+
+### 2. スキル追加（管理者）
+
+- **POST** `/skills`
+
+**Request**
+
+```json
+{
+  "name": "Next.js"
+}
+```
+
+### 3. スキル削除（管理者）
+
+- **DELETE** `/skills/:id`
 
 ---
 
@@ -102,4 +168,4 @@
 
 ### 4. 削除（管理者）
 
-- **DELETE** `admin/contacts/:id`
+- **DELETE** `/admin/contacts/:id`
