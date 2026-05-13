@@ -39,7 +39,7 @@ model Work {
 model Skill {
   id    Int    @id @default(autoincrement())
   name  String
-  level Int
+  level Int?
 }
 
 // お問い合わせ情報
