@@ -31,22 +31,28 @@ frontend/
 |- src/
 |  `- app/
 |     |- admin/
-|     |  |- dashboard/
-|     |  |- login/
-|     |  `- works/
-|     |     `- page.tsx
-|     |- contact/
-|     |  `- page.tsx
-|     |- works/
-|     |  `- page.tsx
+|     |  |- (auth)/login/
+|     |  `- (protected)/
+|     |     |- dashboard/
+|     |     |- profile/
+|     |     |- skills/
+|     |     `- works/
+|     |
 |     |- layout.tsx
 |     |- page.tsx
 |     |- globals.css
 |     `- favicon.ico
 |
+|- components/
+|  `- ContactForm.tsx
+|
 |- lib/
-|  |- api.ts          # API通信処理
-|  `- firebase.ts     # Firebase設定
+|  `- api/
+|     |- contacts.ts
+|     |- profile.ts
+|     |- skills.ts
+|     |- works.ts
+|     `- index.ts
 |
 |- public/
 |- .env.local
@@ -89,7 +95,8 @@ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=xxx
 
 ## 💡 実装ポイント
 
-- App Router によるルーティング設計
+- App Router の Route Groups を利用し、
+  認証ページと保護ページを分離
 - Firebase Authentication による認証制御
 - API通信を `lib/api.ts` に集約し責務分離
 - 管理画面と公開画面をディレクトリで分離
