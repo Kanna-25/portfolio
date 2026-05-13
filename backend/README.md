@@ -21,6 +21,7 @@ Express.js を使用した REST API サーバーです。
 | TypeScript | 型安全な開発 |
 | Prisma     | ORM          |
 | MySQL      | データベース |
+| Docker     | 開発環境構築 |
 
 ---
 
@@ -78,12 +79,18 @@ DATABASE_URL="mysql://user:password@localhost:3306/db_name"
 
 ## 🔗 APIエンドポイント
 
-| Method | Endpoint         | 内容         |
-| ------ | ---------------- | ------------ |
-| GET    | /works           | 実績一覧取得 |
-| POST   | /admin/works     | 実績作成     |
-| PUT    | /admin/works/:id | 実績更新     |
-| DELETE | /admin/works/:id | 実績削除     |
+| Method | Endpoint         | 内容             |
+| ------ | ---------------- | ---------------- |
+| GET    | /works           | 実績一覧取得     |
+| POST   | /admin/works     | 実績作成         |
+| PUT    | /admin/works/:id | 実績更新         |
+| DELETE | /admin/works/:id | 実績削除         |
+| GET    | /profile         | プロフィール取得 |
+| PUT    | /admin/profile   | プロフィール更新 |
+| GET    | /skills          | スキル一覧取得   |
+| POST   | /skills          | スキル追加       |
+| DELETE | /skills/:id      | スキル削除       |
+| POST   | /contacts        | お問い合わせ送信 |
 
 ---
 
