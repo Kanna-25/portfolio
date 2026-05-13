@@ -51,7 +51,16 @@
 ### 管理画面（認証必須）
 
 - 実績の作成 / 編集 / 削除（CRUD）
+- スキルの追加 / 削除
+- プロフィール編集
+- コンタクトの表示 / 削除
 - ログインユーザーのみアクセス可能（認可制御）
+
+### 🔒 認証・認可
+
+- Firebase Authentication を利用
+- 未ログイン時は管理画面へアクセス不可
+- Route Groups を利用して認証ページを分離
 
 ---
 
@@ -119,6 +128,15 @@ npm run dev
 ```bash
 http://localhost:3000
 ```
+
+---
+
+## 💡 工夫した点
+
+- frontend / backend を分離した構成を採用
+- API通信を lib/api に集約し責務分離
+- Prisma による型安全なDB操作
+- App Router の Route Groups による認証制御
 
 ---
 
