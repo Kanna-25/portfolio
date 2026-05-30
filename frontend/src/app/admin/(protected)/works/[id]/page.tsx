@@ -16,7 +16,7 @@ export default function EditPage() {
   const [githubUrl, setUrl] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/works`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/works`)
       .then((res) => res.json())
       .then((data) => {
         const target = data.find((w: any) => w.id === id);

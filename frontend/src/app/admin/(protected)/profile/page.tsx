@@ -9,7 +9,7 @@ export default function ProfileEditPage() {
 
   // 初期データ取得
   useEffect(() => {
-    fetch("http://localhost:3001/api/profile")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`)
       .then((res) => res.json())
       .then((data) => {
         setName(data.name);
@@ -19,7 +19,7 @@ export default function ProfileEditPage() {
 
   // 更新処理
   const handleUpdate = async () => {
-    await fetch("http://localhost:3001/api/admin/profile", {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/profile`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
