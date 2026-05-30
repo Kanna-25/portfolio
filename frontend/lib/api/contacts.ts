@@ -1,5 +1,5 @@
 // APIのベースURL
-const API_BASE = "http://localhost:3001/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL!;
 
 //　問い合わせフォーム
 export const createContact = async (data: {

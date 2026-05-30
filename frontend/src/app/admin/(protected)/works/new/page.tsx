@@ -16,16 +16,19 @@ export default function AddWorkPage() {
 
     try {
       // バックエンドAPIにデータを送る
-      const response = await fetch("http://localhost:3001/api/admin/works", {
-        // 新規作成なのでPOST使用
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: title,
-          description: description,
-          url: url,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/admin/works`,
+        {
+          // 新規作成なのでPOST使用
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: title,
+            description: description,
+            url: url,
+          }),
+        },
+      );
 
       // レスポンスの判定
       if (response.ok) {

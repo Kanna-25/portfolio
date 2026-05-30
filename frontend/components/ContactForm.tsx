@@ -14,7 +14,7 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      await fetch("http://localhost:3001/api/contacts", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contacts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
