@@ -7,7 +7,7 @@ Next.js を使用したフロントエンドアプリケーションです。
 
 ## 🚀 概要
 
-- App Router によるページ管理
+- Vercelでデプロイされたフロントエンド
 - Firebase Authentication による認証
 - REST API（Express）と連携
 
@@ -79,6 +79,9 @@ npm run dev
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=xxx
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=xxx
+
+NEXT_PUBLIC_SUPABASE_URL=xxx
+NEXT_PUBLIC_SUPABASE_ANON_KEY=xxx
 ```
 
 ---
@@ -106,4 +109,4 @@ NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=xxx
 ## 🔗 関連
 
 バックエンド詳細は以下参照  
-→ `../backend/README.md`
+→ [Backend README](../backend/README.md)
