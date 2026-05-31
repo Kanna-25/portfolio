@@ -7,8 +7,8 @@ Express.js を使用した REST API サーバーです。
 
 ## 🚀 概要
 
-- REST API によるデータ提供
-- Prisma を用いたデータベース操作
+- RenderでホストされたAPIサーバー
+- Prisma + SupabaseでDB管理
 - 管理画面用のCRUD機能を提供
 
 ---
@@ -20,7 +20,7 @@ Express.js を使用した REST API サーバーです。
 | Express.js | APIサーバー  |
 | TypeScript | 型安全な開発 |
 | Prisma     | ORM          |
-| MySQL      | データベース |
+| Supabase   | DB           |
 | Docker     | 開発環境構築 |
 
 ---
@@ -72,7 +72,8 @@ npm run dev
 `.env`
 
 ```env
-DATABASE_URL="mysql://user:password@localhost:3306/db_name"
+DATABASE_URL=Supabase Pooler URL
+DIRECT_URL=Supabase Direct URL
 ```
 
 ---
@@ -106,4 +107,4 @@ DATABASE_URL="mysql://user:password@localhost:3306/db_name"
 ## 🔗 関連
 
 フロントエンド詳細は以下参照  
-→ `../frontend/README.md`
+→ [Frontend README ](../frontend/README.md)

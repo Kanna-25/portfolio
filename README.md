@@ -7,27 +7,37 @@
 
 ## 🚀 システム構成
 
-フロントエンド・バックエンドを分離した構成を採用し、実務に近いアーキテクチャで開発しています。
+フロントエンド・バックエンド・DBを分離したフルスタック構成です。  
+それぞれクラウド環境にデプロイしています。
 
-- **Frontend**: Next.js (App Router) によるSSR対応
-- **Backend**: Express.js によるREST API構築
-- **Database**: MySQL（Docker上）を Prisma で操作
-- **Authentication**: Firebase Authentication による認証・認可制御
+- **Frontend**: Next.js（Vercel）
+- **Backend**: Express.js（Render）
+- **Database**: Supabase（PostgreSQL）
+- **ORM**: Prisma
+- **Authentication**: Firebase Authentication
+
+---
+
+## 🌐 公開URL
+
+- Frontend: https://portfolio-ten-lyart-csbky1pmm3.vercel.app
+- Backend API: https://portfolio-backend-auct.onrender.com/api
 
 ---
 
 ## 🛠 技術スタック
 
-| 分類     | 技術                    | 用途                 |
-| -------- | ----------------------- | -------------------- |
-| Frontend | Next.js (App Router)    | UI構築 / SSR         |
-|          | TypeScript              | 型安全な開発         |
-|          | Tailwind CSS            | スタイリング         |
-| Backend  | Express.js              | REST API             |
-|          | TypeScript              | 型安全なサーバー開発 |
-| Database | MySQL                   | データ永続化         |
-|          | Prisma ORM              | DB操作（ORM）        |
-| Auth     | Firebase Authentication | 認証・認可           |
+| 分類     | 技術                    |
+| -------- | ----------------------- |
+| Frontend | Next.js (App Router)    |
+|          | TypeScript              |
+|          | Tailwind CSS            |
+| Backend  | Express.js              |
+|          | TypeScript              |
+| Database | Supabase (PostgreSQL)   |
+| ORM      | Prisma                  |
+| Auth     | Firebase Authentication |
+| Infra    | Vercel / Render         |
 
 ---
 
@@ -148,16 +158,8 @@ http://localhost:3000
 - frontend / backend を分離した構成を採用
 - API通信を lib/api に集約し責務分離
 - Prisma による型安全なDB操作
-- App Router の Route Groups による認証制御
-
----
-
-## 今後の改善予定 ✍️
-
-- 画像アップロード機能
-- バリデーション強化
-- E2Eテスト導入
-- CI/CD構築
+- Supabase移行によるクラウドDB化
+- Render + Vercel による本番デプロイ構成
 
 ---
 
